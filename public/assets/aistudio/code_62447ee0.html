@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>Aurora Glass AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;min-height:100vh;margin:0;padding:0;background-color:#171216;color:#ebdfe5;overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary": "#4b2700", "surface": "#171216", "inverse-primary": "#ab286d", "error-container": "#93000a", "glass-border": "rgba(255, 255, 255, 0.14)", "pink-soft": "#D9759F", "glass-fill": "rgba(255, 255, 255, 0.06)", "surface-dim": "#171216", "primary-container": "#ec5da1", "on-background": "#ebdfe5", "error": "#ffb4ab", "success": "#3DDC5A", "surface-variant": "#3a3337", "secondary": "#ffade3", "surface-container-high": "#2e282d", "surface-container-highest": "#3a3337", "on-secondary-fixed-variant": "#7e1a6a", "primary-fixed": "#ffd9e5", "on-primary": "#63003b", "secondary-fixed": "#ffd8ee", "glass-highlight": "rgba(255, 255, 255, 0.25)", "primary": "#ffb0ce", "surface-bright": "#3e373c", "on-tertiary-fixed": "#2d1600", "on-tertiary-fixed-variant": "#683c0e", "on-surface-variant": "#dcbfc8", "on-secondary": "#5f004f", "bg-deep": "#1A1015", "primary-fixed-dim": "#ffb0ce", "outline-variant": "#564148", "secondary-container": "#811d6d", "tertiary": "#f9b981", "background": "#171216", "on-primary-fixed-variant": "#8b0454", "on-primary-fixed": "#3e0022", "secondary-fixed-dim": "#ffade3", "surface-container-lowest": "#120d11", "mauve-300": "#C395B0", "glass-fill-tint": "rgba(255, 255, 255, 0.20)", "text-on-light": "#111111", "inverse-surface": "#ebdfe5", "surface-container": "#241e22", "tertiary-fixed": "#ffdcc0", "inverse-on-surface": "#352e33", "surface-container-low": "#201a1e", "tertiary-container": "#bd8551", "tertiary-fixed-dim": "#f9b981", "on-error-container": "#ffdad6", "on-secondary-container": "#ff95df", "outline": "#a48a92", "on-surface": "#ebdfe5", "plum-700": "#5A1830", "on-tertiary-container": "#422200", "on-primary-container": "#570033", "glass-fill-strong": "rgba(255, 255, 255, 0.12)", "on-error": "#690005", "surface-tint": "#ffb0ce", "plum-500": "#7E2548", "mauve-400": "#B07A9C", "on-secondary-fixed": "#3a0030" }, borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" }, spacing: { gutter: "1rem", "space-sm": "0.5rem", "margin-mobile": "1.25rem", "space-md": "1rem", "gutter-mobile": "0.75rem", "space-xl": "2rem", margin: "1.5rem", "space-lg": "1.25rem", "space-xs": "0.25rem" }, fontFamily: { "title-sm": ["Plus Jakarta Sans"], meta: ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], caption: ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"] }, fontSize: { "title-sm": ["16px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "500" }], meta: ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400" }], "display-hero-mobile": ["38px", { lineHeight: "42px", letterSpacing: "-0.02em", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "headline-lg": ["30px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "500" }], caption: ["13px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "400" }], "headline-lg-mobile": ["26px", { lineHeight: "30px", letterSpacing: "-0.02em", fontWeight: "500" }], "label-md": ["14px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "500" }], "headline-md": ["22px", { lineHeight: "26px", letterSpacing: "-0.01em", fontWeight: "500" }], "display-hero": ["44px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "500" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+
+    /* Living Aurora Drift Animation */
+    @keyframes auroraDriftOne {
+      0%, 100% {
+        transform: translate(-50%, 0) scale(1);
+        opacity: 0.35;
+      }
+      50% {
+        transform: translate(-45%, 25px) scale(1.18);
+        opacity: 0.55;
+      }
+    }
+    @keyframes auroraDriftTwo {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.22;
+      }
+      50% {
+        transform: translate(-30px, -20px) scale(1.22);
+        opacity: 0.42;
+      }
+    }
+    @keyframes auroraDriftAmbient {
+      0%, 100% {
+        transform: scale(1) translate(0, 0);
+        opacity: 0.3;
+      }
+      50% {
+        transform: scale(1.15) translate(15px, 10px);
+        opacity: 0.48;
+      }
+    }
+    .animate-aurora-1 {
+      animation: auroraDriftOne 14s ease-in-out infinite;
+    }
+    .animate-aurora-2 {
+      animation: auroraDriftTwo 16s ease-in-out infinite;
+    }
+    .animate-aurora-ambient {
+      animation: auroraDriftAmbient 18s ease-in-out infinite;
+    }
+
+    /* Breathing Glow for Circular Progress Ring */
+    @keyframes ringPulse {
+      0%, 100% {
+        filter: drop-shadow(0 0 7px rgba(217, 117, 159, 0.75));
+      }
+      50% {
+        filter: drop-shadow(0 0 16px rgba(232, 90, 158, 0.95)) drop-shadow(0 0 25px rgba(255, 176, 206, 0.5));
+      }
+    }
+    .animate-ring-pulse {
+      animation: ringPulse 3.5s ease-in-out infinite;
+    }
+
+    /* Mascot subtle float & warmth */
+    @keyframes robotPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 0 0 rgba(249, 185, 129, 0);
+      }
+      50% {
+        transform: scale(1.04);
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.1), 0 0 16px rgba(249, 185, 129, 0.45);
+      }
+    }
+    .animate-robot-pulse {
+      animation: robotPulse 4s ease-in-out infinite;
+    }
+
+    /* Shimmer Bar Sweep */
+    @keyframes shimmerMove {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(200%);
+      }
+    }
+    .animate-shimmer-loop {
+      animation: shimmerMove 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    /* Button Shimmer Sheen */
+    @keyframes ctaSheen {
+      0%, 20% {
+        transform: translateX(-150%) skewX(-20deg);
+      }
+      80%, 100% {
+        transform: translateX(250%) skewX(-20deg);
+      }
+    }
+    .btn-sheen-sweep {
+      animation: ctaSheen 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    /* Staggered entrance animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .stagger-1 { animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both 0.05s; }
+    .stagger-2 { animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both 0.15s; }
+    .stagger-3 { animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both 0.25s; }
+    .stagger-4 { animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both 0.35s; }
+    .stagger-5 { animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both 0.45s; }
+    .stagger-6 { animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both 0.55s; }
+
+    /* Accessibility: Respect Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .stagger-1, .stagger-2, .stagger-3, .stagger-4, .stagger-5, .stagger-6 {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .animate-aurora-1, .animate-aurora-2, .animate-aurora-ambient,
+      .animate-ring-pulse, .animate-robot-pulse, .animate-shimmer-loop, .btn-sheen-sweep {
+        animation: none !important;
+      }
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md relative overflow-x-hidden min-h-screen selection:bg-pink-soft selection:text-white"><div class="pointer-events-none fixed -top-24 left-1/2 -translate-x-1/2 w-[380px] h-[340px] bg-plum-500/30 rounded-full blur-[110px] z-0 animate-aurora-1"></div><div class="pointer-events-none fixed top-1/3 -right-28 w-[300px] h-[300px] bg-primary-container/20 rounded-full blur-[100px] z-0 animate-aurora-2"></div><header class="fixed top-0 inset-x-0 z-50 bg-surface/75 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe transition-all"><div class="h-11 px-6 flex items-center justify-between text-on-surface font-title-sm text-caption select-none"><span class="font-semibold tracking-tight">9:41</span><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] leading-none">signal_cellular_alt</span><span class="material-symbols-outlined text-[16px] leading-none">wifi</span><span class="material-symbols-outlined text-[18px] leading-none">battery_full</span></div></div><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-11 h-11 rounded-full bg-glass-fill-strong backdrop-blur-md flex items-center justify-center text-on-surface shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] hover:scale-105 active:scale-95 transition-transform"><span class="material-symbols-outlined text-[20px] text-primary">auto_awesome</span></div><div class="flex flex-col"><span class="font-caption text-caption text-on-surface-variant leading-none">Sanctuary</span><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight leading-tight">Course Progress</h1></div></div><div class="flex items-center gap-space-xs"><button class="w-11 h-11 rounded-full bg-glass-fill-strong backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-glass-fill-tint active:scale-90 transition-all shadow-[inset_0_1px_0_rgba(255,255,255,0.25)]"><span class="material-symbols-outlined text-[20px]">notifications</span></button><button class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1 hover:brightness-110 active:scale-90 transition-transform"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></button></div></div></header><main class="flex flex-col relative z-10 w-full min-h-screen px-margin-mobile pt-28 pb-32 bg-surface"><div class="flex flex-col w-full gap-space-lg stagger-1">
+<!-- Toast Notification Feedback -->
+<div class="fixed top-24 left-1/2 -translate-x-1/2 z-50 px-space-md py-space-sm rounded-full bg-surface-bright text-primary text-caption font-caption shadow-xl opacity-0 -translate-y-2 pointer-events-none transition-all duration-300" id="checkin-toast">
+    Voice task registered &amp; scheduled
+  </div>
+<!-- 1. Evening Greeting & Prompt Card -->
+<section class="relative w-full rounded-lg bg-surface-container-low p-space-lg shadow-xl overflow-hidden stagger-2">
+<!-- Atmospheric Ambient Glow Underlay -->
+<div class="pointer-events-none absolute -top-12 -right-8 w-44 h-44 rounded-full bg-plum-500/25 blur-[60px]"></div>
+<div class="pointer-events-none absolute -bottom-10 -left-6 w-36 h-36 rounded-full bg-primary-container/20 blur-[50px]"></div>
+<div class="relative z-10 flex items-start gap-space-md">
+<!-- 3D Mascot Avatar Container with Glowing Pulse -->
+<div class="relative shrink-0">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center p-1 shadow-[inset_0_1px_0_rgba(255,255,255,0.25)]">
+<div class="w-full h-full rounded-full bg-gradient-to-tr from-plum-700 via-primary-container to-secondary flex items-center justify-center animate-robot-pulse shadow-md">
+<span class="material-symbols-outlined text-white text-[28px] leading-none" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+</div>
+<!-- Active Status Indicator Dot -->
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-success shadow-[0_0_8px_#3DDC5A] ring-2 ring-surface-container-low"></span>
+</div>
+<!-- Mascot & Assistant Speech Bubble -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm text-primary tracking-tight font-semibold">Aura AI</span>
+<span class="px-2 py-0.5 rounded-full bg-glass-fill-strong text-on-surface-variant font-meta text-meta">Evening Check-in</span>
+</div>
+<span class="font-meta text-meta text-on-surface-variant">5:45 PM</span>
+</div>
+<!-- Speech Bubble Frame -->
+<div class="relative rounded-2xl bg-glass-fill-strong p-3.5 shadow-sm backdrop-blur-md">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+            Welcome back from college, Alex! 🎒 What homework or assignments do we need to tackle tonight?
+          </p>
+</div>
+</div>
+</div>
+<!-- Student Sanctuary Energy Status -->
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary text-[18px]">bedtime</span>
+<span>Target Bedtime: <strong class="text-on-surface font-medium">11:00 PM</strong></span>
+</div>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span class="font-medium">3 Study Slots Open</span>
+</div>
+</div>
+</section>
+<!-- 2. Voice & Quick Log Section -->
+<section class="flex flex-col gap-space-sm w-full stagger-3">
+<!-- Interactive Glowing Voice Log Button -->
+<div class="relative group cursor-pointer w-full rounded-lg bg-surface-container p-space-lg shadow-xl overflow-hidden transition-all duration-300 active:scale-[0.98]" id="voice-record-card">
+<div class="pointer-events-none absolute inset-0 bg-gradient-to-r from-plum-700/20 via-primary-container/15 to-transparent opacity-60"></div>
+<div class="relative z-10 flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<!-- Mic Ring with Audio Waves -->
+<div class="relative shrink-0 w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[24px]" id="mic-icon">mic</span>
+<!-- Ambient sound ring indicator -->
+<div class="absolute -inset-1.5 rounded-full bg-primary/25 blur-sm animate-ping pointer-events-none" id="mic-wave"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Tap to speak homework tasks</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">AI listens, extracts due dates &amp; sets alarms</span>
+</div>
+</div>
+<!-- Voice Soundwave SVG Visualizer -->
+<div class="shrink-0 flex items-center gap-1 h-7 px-2">
+<span class="w-1 h-3 rounded-full bg-primary animate-pulse"></span>
+<span class="w-1 h-6 rounded-full bg-pink-soft animate-pulse" style="animation-delay: 150ms;"></span>
+<span class="w-1 h-4 rounded-full bg-secondary animate-pulse" style="animation-delay: 300ms;"></span>
+<span class="w-1 h-5 rounded-full bg-primary animate-pulse" style="animation-delay: 75ms;"></span>
+<span class="w-1 h-2 rounded-full bg-on-surface-variant"></span>
+</div>
+</div>
+</div>
+<!-- Quick Audio Prompt Suggestion Chip -->
+<button class="w-full flex items-center justify-between gap-space-sm px-space-md py-space-sm rounded-full bg-surface-container-high text-left shadow-sm active:scale-[0.98] transition-transform" id="quick-prompt-chip">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+<span class="font-meta text-meta text-on-surface-variant truncate">
+          Prompt idea: <span class="text-on-surface italic">"I have DAA question 4 and Math quiz prep"</span>
+</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">add_task</span>
+</button>
+</section>
+<!-- 3. Today's Homework & Work Queue (Extracted by AI) -->
+<section class="flex flex-col gap-space-md w-full stagger-4">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<h2 class="font-title-sm text-title-sm text-on-surface font-semibold tracking-tight">Today's Academic Queue</h2>
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary-container font-meta text-meta flex items-center justify-center font-bold">3</span>
+</div>
+<span class="font-meta text-meta text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+        Parsed by Aura
+      </span>
+</div>
+<!-- Homework Cards Stack -->
+<div class="flex flex-col gap-space-sm w-full">
+<!-- Item 1: DAA -->
+<article class="relative rounded-lg bg-surface-container p-space-md shadow-lg overflow-hidden flex flex-col gap-space-sm transition-all hover:bg-surface-container-high">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-2.5 min-w-0">
+<span class="mt-0.5 w-7 h-7 rounded-full bg-plum-700/60 text-pink-soft flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">account_tree</span>
+</span>
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold truncate">DAA: Graph Algorithm Assignment</h3>
+<span class="font-meta text-meta text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">school</span> Faculty: Dr. Raman
+              </span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-error-container/40 text-error font-meta text-meta shrink-0 font-medium">Due Tomorrow 9:00 AM</span>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-caption text-caption">
+<!-- Reminder Indicator -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-primary font-medium">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">alarm</span>
+<span>Reminder: 6:00 PM Tonight</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-meta text-meta text-on-surface-variant">Est: 1h 15m</span>
+<button class="w-8 h-8 rounded-full bg-glass-fill-strong flex items-center justify-center text-on-surface hover:text-primary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 2: OS -->
+<article class="relative rounded-lg bg-surface-container p-space-md shadow-lg overflow-hidden flex flex-col gap-space-sm transition-all hover:bg-surface-container-high">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-2.5 min-w-0">
+<span class="mt-0.5 w-7 h-7 rounded-full bg-secondary-container/50 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">memory</span>
+</span>
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold truncate">OS: Thread Synchronization Practice</h3>
+<span class="font-meta text-meta text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">school</span> Faculty: Prof. Priya
+              </span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-meta text-meta shrink-0 font-medium">Due Oct 26</span>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-caption text-caption">
+<!-- Reminder Indicator -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-secondary font-medium">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">alarm</span>
+<span>Reminder: 8:00 PM Tonight</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-meta text-meta text-on-surface-variant">Est: 45m</span>
+<button class="w-8 h-8 rounded-full bg-glass-fill-strong flex items-center justify-center text-on-surface hover:text-secondary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Item 3: Personal Skill Task -->
+<article class="relative rounded-lg bg-surface-container p-space-md shadow-lg overflow-hidden flex flex-col gap-space-sm transition-all hover:bg-surface-container-high">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-2.5 min-w-0">
+<span class="mt-0.5 w-7 h-7 rounded-full bg-tertiary-container/40 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">code</span>
+</span>
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold truncate">Angular Reactive Forms Lab</h3>
+<span class="font-meta text-meta text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">psychology</span> Personal Skill Building
+              </span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-tertiary font-meta text-meta shrink-0 font-medium">Due Today</span>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant font-caption text-caption">
+<!-- Reminder Indicator -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-tertiary font-medium">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">alarm</span>
+<span>Reminder: 9:30 PM</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-meta text-meta text-on-surface-variant">Est: 30m</span>
+<button class="w-8 h-8 rounded-full bg-glass-fill-strong flex items-center justify-center text-on-surface hover:text-tertiary active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 4. Reminder & Notification Management Controls -->
+<section class="flex flex-col gap-space-sm w-full stagger-5">
+<!-- Sleep Smart Reminders Toggle -->
+<div class="flex items-center justify-between p-space-md rounded-lg bg-surface-container-low shadow-md">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-glass-fill-strong flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">schedule</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Sleep-optimized alerts</span>
+<span class="font-meta text-meta text-on-surface-variant truncate">Auto-set reminders based on sleep schedule</span>
+</div>
+</div>
+<!-- Interactive Toggle Switch -->
+<button aria-checked="true" class="w-12 h-6 rounded-full bg-primary p-0.5 flex items-center transition-colors focus:outline-none shrink-0 shadow-inner" id="sleep-toggle" role="switch" type="button">
+<span class="w-5 h-5 rounded-full bg-on-primary transition-transform translate-x-6 shadow-sm" id="toggle-knob"></span>
+</button>
+</div>
+<!-- Add Manual Task Button -->
+<button class="w-full h-12 rounded-full bg-surface-container-high text-on-surface hover:bg-glass-fill-tint font-title-sm text-title-sm flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all" id="add-manual-task-btn">
+<span class="material-symbols-outlined text-primary text-[20px]">add_circle</span>
+<span>+ Add Manual Task / Homework</span>
+</button>
+</section>
+<!-- Visual Study Atmosphere Sanctuary Card (Image Richness) -->
+<section class="relative w-full rounded-lg overflow-hidden shadow-xl stagger-5">
+<div class="bg-cover bg-center w-full h-28 flex items-end p-space-md" data-alt="A warm cozy dark academic study sanctuary room at dusk, glowing plum neon desk lamps, an open tablet displaying programming code and mathematical graph theory diagrams, floating violet atmospheric dust particles, high aesthetic anime glass aesthetic, peaceful quiet study environment" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSZxWYcHwzU_5pQSpuFTyATlAm9AX1_iWBAHLGp97l14CumnCFAlimpxgL0uuvgEaCcTFWPIJNVnGG8ri3AGXP_RCu1NN77boYIbTslNc1hKG6924m5C1s2930c5Kdg26RJlXXF8WXfHamfV6igzptznfz0mf74AJJXAc4OFm31k0_a23vbFz6uY_hlpP60GVF9Kvu8Pt-O1U5BauT0Ld4DInYRpNLQBzD49LVTTw')">
+<div class="w-full bg-surface/85 backdrop-blur-md rounded-xl p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">lightbulb</span>
+<span class="font-meta text-meta text-on-surface">Evening focus environment ready</span>
+</div>
+<span class="font-meta text-meta text-secondary font-medium">Night Mode Active</span>
+</div>
+</div>
+</section>
+<!-- 5. Action CTA: Solid White Pill -->
+<section class="pt-2 w-full stagger-6">
+<button class="relative group w-full h-[52px] rounded-full bg-white text-text-on-light font-title-sm text-title-sm font-semibold flex items-center justify-center gap-2 shadow-[0_4px_24px_rgba(255,176,206,0.25)] hover:bg-primary-fixed active:scale-[0.97] transition-all overflow-hidden" id="confirm-study-cta">
+<!-- Light Sheen Sweep Effect -->
+<span class="pointer-events-none absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/70 to-transparent skew-x-[-20deg] btn-sheen-sweep"></span>
+<span class="material-symbols-outlined text-plum-700 text-[22px]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="tracking-tight">Confirm &amp; Start Evening Study</span>
+</button>
+</section>
+</div>
+<script>
+  (function() {
+    const toast = document.getElementById('checkin-toast');
+    const voiceCard = document.getElementById('voice-record-card');
+    const micIcon = document.getElementById('mic-icon');
+    const micWave = document.getElementById('mic-wave');
+    const quickChip = document.getElementById('quick-prompt-chip');
+    const sleepToggle = document.getElementById('sleep-toggle');
+    const toggleKnob = document.getElementById('toggle-knob');
+    const addManualBtn = document.getElementById('add-manual-task-btn');
+    const confirmCta = document.getElementById('confirm-study-cta');
+
+    function notify(message) {
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.remove('opacity-0', '-translate-y-2', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      clearTimeout(window.__checkinToastTimer);
+      window.__checkinToastTimer = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', '-translate-y-2', 'pointer-events-none');
+      }, 2400);
+    }
+
+    // Voice Card Recorder Interaction
+    let isListening = false;
+    if (voiceCard) {
+      voiceCard.addEventListener('click', () => {
+        isListening = !isListening;
+        if (isListening) {
+          micIcon.textContent = 'graphic_eq';
+          micWave.classList.remove('bg-primary/25');
+          micWave.classList.add('bg-error/40', 'scale-125');
+          notify('Listening... "Speak homework tasks or exams"');
+        } else {
+          micIcon.textContent = 'mic';
+          micWave.classList.remove('bg-error/40', 'scale-125');
+          micWave.classList.add('bg-primary/25');
+          notify('Voice logged! Aura scheduled 2 new reminders.');
+        }
+      });
+    }
+
+    // Quick Chip Click
+    if (quickChip) {
+      quickChip.addEventListener('click', () => {
+        notify('Added "DAA Q4" and "Math Quiz" to study list!');
+      });
+    }
+
+    // Sleep Schedule Toggle
+    let toggleActive = true;
+    if (sleepToggle && toggleKnob) {
+      sleepToggle.addEventListener('click', () => {
+        toggleActive = !toggleActive;
+        if (toggleActive) {
+          sleepToggle.classList.remove('bg-surface-container-highest');
+          sleepToggle.classList.add('bg-primary');
+          toggleKnob.classList.remove('translate-x-0', 'bg-on-surface-variant');
+          toggleKnob.classList.add('translate-x-6', 'bg-on-primary');
+          notify('Alerts aligned to 11:00 PM sleep goal');
+        } else {
+          sleepToggle.classList.remove('bg-primary');
+          sleepToggle.classList.add('bg-surface-container-highest');
+          toggleKnob.classList.remove('translate-x-6', 'bg-on-primary');
+          toggleKnob.classList.add('translate-x-0', 'bg-on-surface-variant');
+          notify('Standard fixed alarms enabled');
+        }
+      });
+    }
+
+    // Manual Task Add Modal trigger
+    if (addManualBtn) {
+      addManualBtn.addEventListener('click', () => {
+        notify('Opening homework task composer...');
+      });
+    }
+
+    // Primary Start Study CTA
+    if (confirmCta) {
+      confirmCta.addEventListener('click', () => {
+        notify('Starting Session 1: DAA Graph Algorithm (6:00 PM)');
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/80 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.2)]" data-active-classes="text-primary font-title-sm"><div class="flex items-center justify-around h-16 px-gutter-mobile"><a class="nav-tab flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-all duration-200 active:scale-90" data-path="learning-dashboard" href="#"><span class="material-symbols-outlined text-[22px] transition-transform duration-200">dashboard</span><span class="font-meta text-meta mt-0.5">Learn</span></a><a class="nav-tab flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-all duration-200 active:scale-90" data-path="course-progress" href="#"><span class="material-symbols-outlined text-[22px] transition-transform duration-200" style="font-variation-settings: 'FILL' 1;">stacked_line_chart</span><span class="font-meta text-meta mt-0.5">Progress</span></a><a class="nav-tab flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-all duration-200 active:scale-90" data-path="ai-assistant-chat" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px] transition-transform duration-200">forum</span><span class="absolute -top-0.5 -right-1 w-2 h-2 rounded-full bg-primary ring-2 ring-surface animate-pulse"></span></div><span class="font-meta text-meta mt-0.5">AI Mentor</span></a><a class="nav-tab flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-all duration-200 active:scale-90" data-path="profile-sanctuary" href="#"><span class="material-symbols-outlined text-[22px] transition-transform duration-200">account_circle</span><span class="font-meta text-meta mt-0.5">Profile</span></a></div><div class="flex justify-center pb-2 pt-1"><div class="w-32 h-1 rounded-full bg-white/25"></div></div></nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Metric Counter & SVG Ring Sweep Animation
+    const counterEl = document.getElementById('hero-progress-counter');
+    const ringEl = document.getElementById('progress-circle-ring');
+    const milestoneBar = document.getElementById('milestone-progress-bar');
+    const toast = document.getElementById('action-toast');
+    const bookmarkBtn = document.getElementById('bookmark-btn');
+    const bookmarkIcon = document.getElementById('bookmark-icon');
+    const ctaBtn = document.getElementById('cta-continue-btn');
+    const askMentorBtn = document.getElementById('ask-mentor-btn');
+
+    // Total circumference for r=62 is 2 * PI * 62 ≈ 389.55
+    const circumference = 389.5;
+    const targetPercent = 79;
+    const targetOffset = circumference - (circumference * targetPercent) / 100; // ~81.8
+
+    // Trigger ring and milestone bar stroke
+    setTimeout(() => {
+      if (ringEl) {
+        ringEl.style.strokeDashoffset = targetOffset;
+      }
+      if (milestoneBar) {
+        milestoneBar.style.width = '79%';
+      }
+    }, 120);
+
+    // Smooth count-up counter (0 to 79)
+    if (counterEl) {
+      let current = 0;
+      const duration = 1400; // 1.4s
+      const frameRate = 1000 / 60;
+      const totalFrames = Math.round(duration / frameRate);
+      let frame = 0;
+
+      const easeOutQuad = (t) => t * (2 - t);
+
+      const counterInterval = setInterval(() => {
+        frame++;
+        const progress = easeOutQuad(frame / totalFrames);
+        current = Math.min(Math.round(progress * targetPercent), targetPercent);
+        counterEl.textContent = `${current}%`;
+
+        if (frame >= totalFrames) {
+          clearInterval(counterInterval);
+          counterEl.textContent = `${targetPercent}%`;
+        }
+      }, frameRate);
+    }
+
+    // Toast helper
+    function showToast(msg) {
+      if (!toast) return;
+      toast.textContent = msg;
+      toast.classList.remove('opacity-0', 'translate-y-[-8px]', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      clearTimeout(window.__toastTimeout);
+      window.__toastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-[-8px]', 'pointer-events-none');
+      }, 2200);
+    }
+
+    // Bookmark Toggle State
+    let isBookmarked = false;
+    if (bookmarkBtn && bookmarkIcon) {
+      bookmarkBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        isBookmarked = !isBookmarked;
+        if (isBookmarked) {
+          bookmarkIcon.style.fontVariationSettings = "'FILL' 1";
+          bookmarkBtn.classList.add('text-primary');
+          bookmarkBtn.classList.remove('text-on-surface-variant');
+          showToast('Added to saved sanctuary courses');
+        } else {
+          bookmarkIcon.style.fontVariationSettings = "'FILL' 0";
+          bookmarkBtn.classList.remove('text-primary');
+          bookmarkBtn.classList.add('text-on-surface-variant');
+          showToast('Removed from saved courses');
+        }
+      });
+    }
+
+    // Ask Mentor Micro-interaction
+    if (askMentorBtn) {
+      askMentorBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showToast('Connecting with Neural AI Mentor...');
+      });
+    }
+
+    // Continue CTA interaction
+    if (ctaBtn) {
+      ctaBtn.addEventListener('click', () => {
+        showToast('Resuming Neural Interfaces module...');
+      });
+    }
+
+    // Interactive Tab switching feel
+    const navTabs = document.querySelectorAll('.nav-tab');
+    navTabs.forEach((tab) => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        navTabs.forEach((t) => {
+          t.classList.remove('text-primary', 'font-title-sm');
+          t.classList.add('text-on-surface-variant');
+          const icon = t.querySelector('.material-symbols-outlined');
+          if (icon && icon.textContent !== 'smart_toy') {
+            icon.style.fontVariationSettings = "'FILL' 0";
+          }
+        });
+        tab.classList.remove('text-on-surface-variant');
+        tab.classList.add('text-primary', 'font-title-sm');
+        const activeIcon = tab.querySelector('.material-symbols-outlined');
+        if (activeIcon) {
+          activeIcon.style.fontVariationSettings = "'FILL' 1";
+        }
+      });
+    });
+  });
+</script>
+</body></html>

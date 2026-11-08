@@ -1,0 +1,6 @@
+{
+  "name": "Vignan Student Tracker & Wearable ERP",
+  "description": "Production student learning tracker and academic ERP with wearable biometric focus monitoring and Aurora Glass AI assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

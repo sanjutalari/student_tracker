@@ -1,0 +1,1676 @@
+# MASTER PRODUCTION DEVELOPMENT PROMPT
+## Vignan Student Learning Tracker & College ERP
+
+**Project Type:** Full-stack institutional learning management and academic ERP platform  
+**Target Institution:** Vignan  
+**Development Goal:** Build a secure, scalable, production-ready platform that helps students manage daily learning while enabling faculty, mentors, and administrators to manage academic operations.
+
+---
+
+# 1. ROLE AND RESPONSIBILITY
+
+Act as a complete senior software development team consisting of:
+
+- Product Architect
+- Senior Angular Frontend Developer
+- Senior Django Backend Developer
+- PostgreSQL Database Architect
+- UI/UX Designer
+- AI/LLM Engineer
+- DevOps Engineer
+- QA and Automation Engineer
+- Application Security Engineer
+
+Your responsibility is to **design, develop, test, document, and prepare the complete application for production deployment**.
+
+Do not build only a static prototype or a collection of disconnected screens.
+
+Build a functional application with:
+- Real authentication and authorization.
+- A properly structured relational database.
+- Working frontend-to-backend API integration.
+- Role-based dashboards.
+- Real CRUD operations.
+- Validated business logic.
+- Error handling and loading states.
+- Automated tests.
+- Deployment configuration.
+- Complete developer documentation.
+
+Do not simply generate a plan and stop. Inspect the project, create the implementation, run it, test it, and fix issues.
+
+---
+
+# 2. PRODUCT VISION
+
+Build a unified platform with two connected modules.
+
+## Module A: Student Learning Tracker
+
+Help every student understand:
+
+1. What classes do I have today?
+2. What assignments should I complete?
+3. What should I study today?
+4. How much time have I spent learning?
+5. What skills am I developing?
+6. Am I progressing towards my academic and career goals?
+7. What should I improve next?
+
+The experience should be simple enough that a student can understand today's priorities within 30–60 seconds.
+
+## Module B: College ERP
+
+Provide the institution with a centralised system to manage:
+
+- Students
+- Faculty
+- Departments
+- Courses and programmes
+- Academic years and semesters
+- Sections and subjects
+- Timetables
+- Attendance
+- Assignments
+- Assessments and examinations
+- Marks and results
+- Documents
+- Fees (later phase)
+- Reports
+- Notifications
+- Administrative permissions
+
+Both modules must share the same reliable backend and institutional data model.
+
+**Important:** Do not mix this product with a separate nationwide education or career-guidance platform. This application is specifically for Vignan's student learning and institutional academic operations.
+
+---
+
+# 3. TECHNOLOGY STACK
+
+Use the following architecture.
+
+## Frontend
+
+- Angular with a currently supported stable version.
+- TypeScript.
+- Angular Router.
+- Angular Reactive Forms.
+- Angular Signals or an appropriate state-management approach.
+- RxJS.
+- Tailwind CSS or a consistent component-based styling system.
+- Angular Material or custom reusable components.
+- Chart.js or ECharts for analytics.
+- PWA support for mobile installation where appropriate.
+
+Angular 16 may be used as a migration baseline if the existing project requires it. For a new production project, prefer a currently supported Angular release.
+
+Do not introduce React into the same application without a clear architectural reason.
+
+## Backend
+
+- Python.
+- Django.
+- Django REST Framework.
+- Django ORM.
+- JWT-based authentication with secure refresh-token handling.
+- Django permissions and custom role-based access control.
+- Celery for background tasks.
+- Redis for caching and background-job coordination.
+
+## Database
+
+- PostgreSQL.
+- Proper foreign keys and constraints.
+- Database indexing.
+- Transaction management.
+- Migration management.
+- Audit-history records.
+
+## AI Services
+
+- Python-based AI service.
+- LLM API integration through a provider abstraction.
+- Retrieval-Augmented Generation (RAG) for approved institutional information.
+- Speech-to-text and text-to-speech through replaceable providers.
+- AI usage monitoring and cost controls.
+
+## Infrastructure
+
+- Docker and Docker Compose.
+- Environment-based configuration.
+- Nginx or an equivalent production reverse proxy.
+- Managed PostgreSQL in production.
+- Object storage for uploaded documents.
+- CI/CD pipeline.
+- Centralised application logging and monitoring.
+
+Choose stable, compatible dependency versions. Pin dependencies and document upgrade procedures.
+
+---
+
+# 4. USER ROLES AND PERMISSIONS
+
+Implement role-based access control at both frontend and backend levels.
+
+## 4.1 Student
+
+Students can:
+
+- View personal dashboard.
+- View their timetable.
+- View attendance.
+- View assignments and deadlines.
+- Submit assignments.
+- Create personal study tasks.
+- Track study sessions.
+- Create academic and skill goals.
+- View quizzes and results.
+- Access approved learning resources.
+- Interact with the AI learning assistant.
+- View personal progress analytics.
+- Receive notifications.
+- Manage permitted profile information.
+
+Students must never access another student's private academic records.
+
+## 4.2 Faculty
+
+Faculty can:
+
+- View assigned classes and subjects.
+- View their timetable.
+- Publish assignments.
+- Upload notes and learning materials.
+- Create quizzes.
+- Record attendance for authorised classes.
+- Evaluate submissions.
+- Enter and update marks within authorised workflows.
+- Publish announcements.
+- View class-level progress.
+- Identify students who may need academic support.
+
+Faculty must not modify academic records outside their assigned permissions.
+
+## 4.3 Mentor
+
+Mentors can:
+
+- View assigned students.
+- View permitted learning progress.
+- Review study goals.
+- Identify missed tasks and concerning progress trends.
+- Record mentoring sessions.
+- Create follow-up actions.
+- Set review dates.
+- Track intervention progress.
+
+Mentor analytics must be supportive and explainable, not punitive.
+
+## 4.4 HOD
+
+HODs can:
+
+- Manage department-level academic information.
+- View department faculty and students.
+- Monitor subject and section progress.
+- Review attendance summaries.
+- Review academic reports.
+- Approve designated workflows.
+- Monitor departmental performance.
+
+## 4.5 Examination Cell
+
+The examination team can:
+
+- Configure examinations.
+- Create examination schedules.
+- Manage assessment records.
+- Enter or import marks.
+- Verify results.
+- Publish authorised results.
+- Generate examination reports.
+
+## 4.6 Administrator
+
+Administrators can:
+
+- Configure institution structure.
+- Manage users and roles.
+- Create departments.
+- Create programmes and batches.
+- Manage academic years and semesters.
+- Manage sections and subjects.
+- Allocate faculty.
+- Configure timetables.
+- Manage system settings.
+- View audit logs.
+- Import and export approved records.
+
+## 4.7 Accounts Role
+
+For the later fee-management module:
+
+- Manage fee structures.
+- Generate invoices.
+- Record payments.
+- Issue receipts.
+- Track dues.
+- Generate financial reports.
+
+Never allow one role to access another role's functionality merely because a frontend route is hidden. Enforce all permissions on the backend.
+
+---
+
+# 5. FRONTEND APPLICATION STRUCTURE
+
+Create separate dashboards for each role.
+
+## 5.1 Student Dashboard
+
+The student home screen should include:
+
+**Top section**
+- Welcome message.
+- Student name.
+- Registration number.
+- Department.
+- Year and semester.
+- Profile menu.
+- Notification icon.
+
+**Today's overview**
+- Today's classes.
+- Next class.
+- Pending assignments.
+- Upcoming examinations.
+- Attendance summary.
+- Today's study target.
+
+**Learning progress**
+- Weekly study hours.
+- Completed tasks.
+- Pending tasks.
+- Goal progress.
+- Subject-wise performance.
+- Skill development progress.
+
+**AI Assistant**
+- Ask a question using text.
+- Speak using a microphone.
+- Hear a spoken daily summary.
+- Request a study plan.
+- Ask about approved syllabus and assignments.
+
+**Quick actions**
+- Add a task.
+- Start study session.
+- View timetable.
+- Check attendance.
+- Open assignments.
+- Set a goal.
+
+Make the dashboard mobile-first and avoid overcrowding it.
+
+## 5.2 Student Navigation
+
+Create these pages:
+
+1. Dashboard
+2. My Timetable
+3. Daily Planner
+4. My Tasks
+5. Study Tracker
+6. Goals and Skills
+7. Attendance
+8. Assignments
+9. Quizzes and Tests
+10. Exams and Results
+11. Learning Resources
+12. Events and Opportunities
+13. AI Learning Assistant
+14. Notifications
+15. Profile and Settings
+
+## 5.3 Faculty Dashboard
+
+Include:
+
+- Today's classes.
+- Upcoming classes.
+- Assigned subjects.
+- Attendance completion.
+- Pending assignment evaluations.
+- Upcoming assessments.
+- Class announcements.
+- Student progress overview.
+
+Faculty navigation:
+
+1. Dashboard
+2. My Timetable
+3. My Classes
+4. Attendance
+5. Assignments
+6. Submissions
+7. Quizzes
+8. Assessments
+9. Learning Materials
+10. Class Progress
+11. Announcements
+12. Profile
+
+## 5.4 Mentor Dashboard
+
+Include:
+
+- Assigned student list.
+- Student progress summaries.
+- Pending mentoring follow-ups.
+- Missed task patterns.
+- Goal progress.
+- Academic performance trends.
+
+Provide student-level detail only for students assigned to that mentor and permitted by institutional policy.
+
+## 5.5 Administrator Dashboard
+
+Include:
+
+- Total students.
+- Total faculty.
+- Departments.
+- Programmes.
+- Active semesters.
+- Attendance summaries.
+- Assignment statistics.
+- Examination statistics.
+- Recent administrative activities.
+- Data import status.
+
+Admin navigation:
+
+1. Dashboard
+2. Institution Setup
+3. Departments
+4. Programmes
+5. Academic Years
+6. Semesters
+7. Students
+8. Faculty
+9. Mentors
+10. Subjects
+11. Sections
+12. Faculty Allocation
+13. Timetable Management
+14. Attendance Management
+15. Assignments
+16. Examinations
+17. Results
+18. Documents
+19. Fees (later phase)
+20. Reports
+21. User Roles
+22. Audit Logs
+23. System Settings
+
+---
+
+# 6. STUDENT LEARNING TRACKER – CORE IMPLEMENTATION
+
+This is one of the most important parts of the application.
+
+## 6.1 Daily Planner
+
+Build a planner that combines:
+
+- Official college timetable.
+- Assignments.
+- Assignment deadlines.
+- Upcoming tests.
+- Student goals.
+- Available study time.
+- Personal tasks.
+- Study preferences.
+- Rest periods.
+
+Generate an editable daily plan.
+
+Example:
+
+| Time | Activity |
+|---|---|
+| 8:15–9:15 | College – DAA |
+| 9:15–10:15 | College – Operating Systems |
+| 4:30–5:00 | DAA revision |
+| 5:00–5:15 | Break |
+| 5:15–6:00 | Java practice |
+| 6:00–6:30 | Assignment completion |
+
+These are example entries only. Generate actual schedules from configured timetable and student availability.
+
+### Scheduling rules
+
+- Never overlap study sessions with official classes.
+- Do not schedule two activities at the same time.
+- Include breaks.
+- Consider task deadlines and priority.
+- Respect the student's available hours.
+- Allow students to edit or reschedule suggested tasks.
+- Preserve completed tasks.
+- Show conflicts clearly.
+- Never silently overwrite a student's existing plan.
+
+## 6.2 Task Management
+
+Students can create tasks with:
+
+- Task title.
+- Description.
+- Subject.
+- Category.
+- Priority.
+- Due date.
+- Estimated duration.
+- Completion status.
+
+Task categories:
+
+- College assignments.
+- Exam preparation.
+- Coding practice.
+- Skill development.
+- Projects.
+- Personal learning.
+
+Task statuses:
+
+- Not started.
+- In progress.
+- Completed.
+- Rescheduled.
+- Cancelled.
+
+Include reminders and task history.
+
+## 6.3 Study Session Tracking
+
+Implement a study timer.
+
+Features:
+
+- Start session.
+- Pause session.
+- Resume session.
+- End session.
+- Select subject.
+- Select skill.
+- Add session notes.
+- Record duration.
+- View daily and weekly totals.
+
+Prevent duplicate active sessions for the same user unless an explicit multi-session design is implemented.
+
+Store timestamps on the server and handle timezone conversion correctly.
+
+## 6.4 Goals and Skill Tracking
+
+Students should be able to create goals such as:
+
+- Complete Java fundamentals.
+- Learn Angular.
+- Complete 50 DAA problems.
+- Improve mathematics.
+- Build a full-stack project.
+- Prepare for placements.
+
+Each goal should have:
+
+- Goal title.
+- Description.
+- Category.
+- Target date.
+- Associated skills.
+- Milestones.
+- Progress percentage.
+- Status.
+
+Students should be able to add evidence of completion, such as a project link or uploaded certificate.
+
+Do not automatically claim a skill is mastered simply because a student has spent a certain number of hours.
+
+## 6.5 Progress Analytics
+
+Provide:
+
+- Daily study time.
+- Weekly study time.
+- Monthly study time.
+- Subject-wise study distribution.
+- Task completion percentage.
+- Assignment submission history.
+- Quiz performance.
+- Goal completion.
+- Skill development history.
+
+Show meaningful trends rather than decorative charts.
+
+Clearly distinguish:
+- Official academic scores.
+- Student-reported learning activity.
+- AI-generated estimates or suggestions.
+
+---
+
+# 7. AI LEARNING ASSISTANT
+
+Build an AI assistant that helps students organise and understand their learning.
+
+## 7.1 Text Assistant
+
+Students should be able to ask:
+
+- What should I study today?
+- What assignments are pending?
+- When is my next class?
+- How much did I study this week?
+- Which tasks are overdue?
+- Explain a topic from my approved syllabus.
+- Create a revision plan for my upcoming test.
+- Generate practice questions from approved study material.
+
+## 7.2 Voice Assistant
+
+Implement:
+
+- Microphone permission handling.
+- Speech-to-text.
+- Text response.
+- Text-to-speech.
+- Voice playback controls.
+- Clear microphone recording status.
+- Text alternative for every voice interaction.
+
+Example:
+
+Student: "What should I complete today?"
+
+Assistant: "You have two pending assignments and one study goal. Your DAA assignment is due tomorrow. I suggest completing it first, then spending 30 minutes revising Operating Systems."
+
+## 7.3 AI Data Grounding
+
+The AI must retrieve relevant information from authorised sources:
+
+- Student timetable.
+- Student assignments.
+- Official syllabus.
+- Approved faculty notes.
+- Academic calendar.
+- Student goals.
+- Learning resources.
+
+Never allow AI to invent:
+
+- Assignment deadlines.
+- Attendance records.
+- Examination dates.
+- Marks.
+- Faculty instructions.
+- Official syllabus information.
+
+If information is missing, explicitly say that it is unavailable.
+
+## 7.4 AI Permissions and Safety
+
+The AI assistant must never independently:
+
+- Mark attendance.
+- Change marks.
+- Submit an assignment.
+- Delete academic records.
+- Sign documents.
+- Change official timetable entries.
+
+For any operation that changes records, require an explicit user action and normal backend permission validation.
+
+Keep AI-generated quizzes and study plans clearly labelled. Allow faculty review where appropriate.
+
+## 7.5 AI Cost Management
+
+Build:
+
+- Provider-independent AI service.
+- API key management through environment secrets.
+- Request logging without unnecessarily storing sensitive conversations.
+- Rate limits.
+- Token and usage monitoring.
+- Configurable model selection.
+- Daily and monthly budget limits.
+- Graceful fallback when the AI service is unavailable.
+
+Do not hardcode API keys.
+
+---
+
+# 8. COLLEGE ERP MODULES
+
+## 8.1 Institution Management
+
+Support the following hierarchy:
+
+Institution → Campus → Department → Programme → Academic Year → Semester → Section → Subject.
+
+The system should support future expansion to additional campuses without redesigning the core database.
+
+## 8.2 Student Management
+
+Store:
+
+- Registration number.
+- Name.
+- Institutional email.
+- Department.
+- Programme.
+- Batch.
+- Current year.
+- Current semester.
+- Section.
+- Academic status.
+- Approved profile details.
+
+Avoid collecting unnecessary personal information.
+
+Provide controlled bulk import using validated CSV or Excel files.
+
+## 8.3 Faculty Management
+
+Store:
+
+- Faculty ID.
+- Name.
+- Institutional email.
+- Department.
+- Designation.
+- Assigned subjects.
+- Assigned sections.
+- Employment status.
+
+Allow administrators to assign and remove faculty allocations.
+
+## 8.4 Subject and Course Management
+
+Support:
+
+- Subject code.
+- Subject name.
+- Credits.
+- Programme.
+- Semester.
+- Syllabus.
+- Assigned faculty.
+- Learning materials.
+
+## 8.5 Timetable Management
+
+Administrators and authorised faculty should be able to:
+
+- Create timetable entries.
+- Assign faculty.
+- Assign subjects.
+- Assign classrooms.
+- Configure weekdays.
+- Set class start and end times.
+- Publish timetable changes.
+
+Validate:
+
+- Faculty time conflicts.
+- Section time conflicts.
+- Classroom conflicts.
+- Invalid time ranges.
+
+Students should see only the timetable applicable to their section.
+
+## 8.6 Attendance Management
+
+Faculty should be able to:
+
+1. Select an authorised class.
+2. Select date and period.
+3. View enrolled students.
+4. Mark attendance.
+5. Submit attendance.
+6. Correct attendance through an authorised workflow.
+
+Attendance statuses:
+
+- Present.
+- Absent.
+- Late.
+- On approved leave, if institutional policy supports it.
+
+Include:
+
+- Subject-wise attendance.
+- Overall attendance.
+- Attendance percentage.
+- Monthly summaries.
+- Attendance correction requests.
+- Faculty submission history.
+- Audit history.
+
+Never permit students to edit official attendance.
+
+## 8.7 Assignment Management
+
+Faculty can:
+
+- Create assignments.
+- Select subject and section.
+- Add instructions.
+- Attach files.
+- Set issue date.
+- Set deadline.
+- Configure allowed submission formats.
+- Publish assignments.
+
+Students can:
+
+- View assignments.
+- Upload submissions.
+- Resubmit when allowed.
+- View submission status.
+- Receive feedback.
+- View marks after publication.
+
+Record submission timestamps and preserve previous submissions where required.
+
+## 8.8 Quiz and Assessment Management
+
+Support:
+
+- Multiple-choice questions.
+- Multiple-answer questions.
+- True/false.
+- Short-answer questions.
+- Subject-wise question banks.
+- Timed quizzes.
+- Configurable attempts.
+- Automatic objective evaluation.
+- Faculty evaluation for subjective answers.
+- Result publication.
+
+Include periodic tests, such as fortnightly or monthly assessments, when configured by faculty.
+
+Do not allow students to access answers or results before their permitted release time.
+
+## 8.9 Examination and Results
+
+Include:
+
+- Examination creation.
+- Examination schedule.
+- Subject mapping.
+- Student eligibility.
+- Marks entry.
+- Marks verification.
+- Result publication.
+- Subject-wise results.
+- Semester-wise results.
+- Downloadable reports.
+
+Changes to published marks must require an authorised correction process and must be audited.
+
+## 8.10 Document Management and Signing
+
+Support:
+
+- Student document uploads.
+- Faculty document uploads.
+- Administrative document verification.
+- Document status.
+- Approval and rejection comments.
+- Version history.
+- Signature workflow.
+
+For electronic signing, use a compliant digital-signature provider where legally required. Do not present a simple typed name or checkbox as a legally valid digital signature.
+
+## 8.11 Notifications
+
+Implement in-app notifications first.
+
+Later integrations may include:
+
+- Email.
+- SMS.
+- Push notifications.
+- WhatsApp through an approved provider.
+
+Notification examples:
+
+- New assignment.
+- Upcoming deadline.
+- Timetable change.
+- Attendance update.
+- Quiz announcement.
+- Results published.
+- Mentor follow-up.
+- Institutional announcement.
+
+Allow users to configure permitted notification preferences.
+
+## 8.12 Events and Opportunities
+
+Provide an optional module for:
+
+- Hackathons.
+- Internships.
+- Workshops.
+- Coding competitions.
+- Technical events.
+- Placement preparation activities.
+
+Allow authorised administrators or faculty to publish opportunities.
+
+---
+
+# 9. DATABASE ARCHITECTURE
+
+Design a normalised PostgreSQL schema.
+
+At minimum, consider these entities:
+
+### Institutional structure
+
+- Institution
+- Campus
+- Department
+- Programme
+- AcademicYear
+- Semester
+- Batch
+- Section
+- Subject
+- Classroom
+
+### Identity and permissions
+
+- User
+- StudentProfile
+- FacultyProfile
+- MentorProfile
+- Role
+- Permission
+- UserRole
+- MentorStudentAssignment
+
+### Academic operations
+
+- FacultyAllocation
+- Timetable
+- TimetableEntry
+- AttendanceSession
+- AttendanceRecord
+- AttendanceCorrection
+- Assignment
+- AssignmentAttachment
+- AssignmentSubmission
+- SubmissionFeedback
+- Quiz
+- Question
+- QuestionOption
+- QuizAttempt
+- QuizAnswer
+- Assessment
+- ExamSchedule
+- MarksRecord
+- ResultPublication
+
+### Learning tracker
+
+- StudentTask
+- StudySession
+- LearningGoal
+- GoalMilestone
+- Skill
+- StudentSkill
+- StudentSkillEvidence
+- DailyPlan
+- DailyPlanItem
+- StudentProgressSnapshot
+
+### AI and resources
+
+- AIConversation
+- AIMessage
+- AIUsageRecord
+- LearningResource
+- SyllabusDocument
+- KnowledgeDocument
+
+### Administration
+
+- Notification
+- Document
+- DocumentApproval
+- SignatureRequest
+- Announcement
+- Event
+- AuditLog
+- SystemSetting
+
+Use UUID primary keys where appropriate.
+
+Include:
+
+- Created timestamp.
+- Updated timestamp.
+- Created-by and updated-by where relevant.
+- Soft deletion only where appropriate.
+- Database constraints.
+- Indexes for frequently queried fields.
+- Tenant or institution ownership for institutional records.
+
+Do not store sensitive authentication information in plain text.
+
+Create Django models, migrations, serializers, services, permissions, and API endpoints based on this design.
+
+Document the relationships and important constraints.
+
+---
+
+# 10. BACKEND API ARCHITECTURE
+
+Use a versioned REST API.
+
+Example:
+
+`/api/v1/auth/`
+
+`/api/v1/students/`
+
+`/api/v1/faculty/`
+
+`/api/v1/departments/`
+
+`/api/v1/subjects/`
+
+`/api/v1/timetable/`
+
+`/api/v1/attendance/`
+
+`/api/v1/assignments/`
+
+`/api/v1/submissions/`
+
+`/api/v1/quizzes/`
+
+`/api/v1/assessments/`
+
+`/api/v1/results/`
+
+`/api/v1/tasks/`
+
+`/api/v1/study-sessions/`
+
+`/api/v1/goals/`
+
+`/api/v1/progress/`
+
+`/api/v1/ai/`
+
+`/api/v1/notifications/`
+
+`/api/v1/documents/`
+
+`/api/v1/admin/`
+
+Requirements:
+
+- Use serializers for validation.
+- Use service layers for complex business logic.
+- Use pagination.
+- Use filtering and sorting.
+- Return consistent response structures.
+- Implement meaningful HTTP status codes.
+- Validate all input on the server.
+- Add API documentation using OpenAPI/Swagger.
+- Prevent unauthorised access to records.
+- Use database transactions for multi-step academic operations.
+
+Do not put all business logic inside views or frontend components.
+
+---
+
+# 11. SECURITY AND PRIVACY
+
+Treat student academic records as sensitive institutional information.
+
+Implement:
+
+- Secure password hashing.
+- Secure authentication.
+- Refresh-token rotation and revocation.
+- Role-based permissions.
+- Object-level access checks.
+- CSRF protection where applicable.
+- CORS restrictions.
+- Rate limiting.
+- Input validation.
+- SQL injection protection through safe ORM usage.
+- XSS protection.
+- Secure file upload validation.
+- File type and size restrictions.
+- HTTPS in production.
+- Secrets management.
+- Audit logs.
+- Session and account management.
+- Backup encryption.
+- Access revocation.
+- Incident response procedures.
+
+Additional rules:
+
+1. Students may access only their own private records.
+2. Faculty may access only authorised classes and academic workflows.
+3. Mentors may access only assigned students and permitted fields.
+4. Administrative access must be explicitly permissioned.
+5. Sensitive academic changes must be auditable.
+6. Do not expose student records through public URLs.
+7. Do not use real student information in development or testing.
+8. Use synthetic data until institutional data access is formally approved.
+
+Design data retention, deletion, and consent procedures according to applicable Indian law and institutional policy, including applicable requirements under the Digital Personal Data Protection framework.
+
+---
+
+# 12. UI/UX DESIGN REQUIREMENTS
+
+Build a professional, modern university software interface.
+
+## Design direction
+
+- Clean institutional SaaS design.
+- Modern typography.
+- Consistent spacing.
+- Clear information hierarchy.
+- Professional dashboards.
+- Mobile-first responsive layouts.
+- Accessible forms and controls.
+- Fast navigation.
+- Minimal visual clutter.
+
+Use a consistent design system with:
+
+- Primary colours.
+- Secondary colours.
+- Neutral backgrounds.
+- Semantic success, warning, and error colours.
+- Typography scale.
+- Spacing scale.
+- Border radius system.
+- Reusable buttons.
+- Cards.
+- Tables.
+- Modals.
+- Drawers.
+- Dropdowns.
+- Form controls.
+- Toast notifications.
+- Loading skeletons.
+
+Provide light and dark themes if feasible.
+
+Use charts only where they communicate useful information.
+
+Avoid:
+- Excessive gradients.
+- Unnecessary animations.
+- Decorative charts with fake values.
+- Hardcoded dashboard statistics.
+- Non-functional buttons.
+- Repeated placeholder pages.
+
+Every screen must support loading, empty, success, and error states.
+
+---
+
+# 13. PROJECT STRUCTURE
+
+Use a maintainable monorepo structure.
+
+Suggested structure:
+
+```text
+vignan-learning-erp/
+│
+├── frontend/
+│   └── angular-app/
+│       ├── src/
+│       │   └── app/
+│       │       ├── core/
+│       │       │   ├── auth/
+│       │       │   ├── guards/
+│       │       │   ├── interceptors/
+│       │       │   └── services/
+│       │       ├── shared/
+│       │       │   ├── components/
+│       │       │   ├── pipes/
+│       │       │   └── directives/
+│       │       ├── features/
+│       │       │   ├── student/
+│       │       │   ├── faculty/
+│       │       │   ├── mentor/
+│       │       │   ├── hod/
+│       │       │   ├── admin/
+│       │       │   ├── attendance/
+│       │       │   ├── assignments/
+│       │       │   ├── examinations/
+│       │       │   ├── learning-tracker/
+│       │       │   └── ai-assistant/
+│       │       └── layout/
+│       └── ...
+│
+├── backend/
+│   ├── config/
+│   ├── apps/
+│   │   ├── accounts/
+│   │   ├── institutions/
+│   │   ├── academics/
+│   │   ├── timetable/
+│   │   ├── attendance/
+│   │   ├── assignments/
+│   │   ├── assessments/
+│   │   ├── learning_tracker/
+│   │   ├── mentorship/
+│   │   ├── ai_assistant/
+│   │   ├── documents/
+│   │   ├── notifications/
+│   │   └── audit/
+│   ├── requirements/
+│   └── manage.py
+│
+├── ai-service/
+│   ├── providers/
+│   ├── retrieval/
+│   ├── speech/
+│   ├── prompts/
+│   └── ...
+│
+├── infrastructure/
+│   ├── docker/
+│   ├── nginx/
+│   └── deployment/
+│
+├── docs/
+│   ├── PRD.md
+│   ├── ARCHITECTURE.md
+│   ├── DATABASE.md
+│   ├── API.md
+│   ├── SETUP.md
+│   ├── DEPLOYMENT.md
+│   ├── SECURITY.md
+│   ├── TESTING.md
+│   └── USER_GUIDE.md
+│
+├── scripts/
+├── docker-compose.yml
+├── .env.example
+└── README.md
+```
+
+Adapt the structure if the existing repository already follows a good architecture. Do not restructure everything unnecessarily.
+
+---
+
+# 14. TESTING REQUIREMENTS
+
+Testing is mandatory.
+
+## Backend testing
+
+Test:
+
+- Authentication.
+- Role permissions.
+- Student record access.
+- Faculty access restrictions.
+- Attendance creation and correction.
+- Assignment creation.
+- Assignment submission.
+- Quiz evaluation.
+- Marks publication.
+- Study session tracking.
+- Daily planner conflicts.
+- AI access restrictions.
+- Document upload validation.
+- Audit logging.
+
+## Frontend testing
+
+Test:
+
+- Login and logout.
+- Role-based navigation.
+- Dashboard rendering.
+- Form validation.
+- Timetable display.
+- Task creation.
+- Study timer.
+- Assignment submission.
+- Attendance views.
+- API error handling.
+- Responsive layouts.
+
+## Integration testing
+
+Verify complete workflows across Angular, Django, PostgreSQL, and background services.
+
+## Security testing
+
+Test:
+
+- Horizontal privilege escalation.
+- Vertical privilege escalation.
+- Unauthorised API access.
+- Invalid tokens.
+- Expired tokens.
+- File upload attacks.
+- Rate-limit enforcement.
+- Sensitive data leakage.
+
+## End-to-end scenarios
+
+At minimum, demonstrate:
+
+1. Admin creates a department and academic semester.
+2. Admin creates a student and faculty account.
+3. Admin assigns a subject and faculty member.
+4. Faculty publishes a timetable.
+5. Student views the timetable.
+6. Faculty publishes an assignment.
+7. Student submits the assignment.
+8. Faculty evaluates the submission.
+9. Student views feedback.
+10. Faculty records attendance.
+11. Student views attendance.
+12. Student creates a personal learning task.
+13. Student starts and completes a study session.
+14. AI assistant generates a plan using the student's authorised data.
+15. Mentor reviews an assigned student's progress.
+
+Do not mark a feature complete until its tests pass.
+
+---
+
+# 15. DEVELOPMENT PHASES
+
+Do not attempt to build every ERP feature at once.
+
+Develop in the following phases.
+
+## Phase 0 – Discovery and Architecture
+
+- Inspect the existing repository.
+- Identify existing code and reusable components.
+- Confirm project dependencies.
+- Define application architecture.
+- Define user roles.
+- Finalise the database model.
+- Document assumptions and unresolved institutional decisions.
+- Create development setup instructions.
+
+**Deliverable:** Architecture, project skeleton, documentation, and development environment.
+
+## Phase 1 – Authentication and Core Setup
+
+Build:
+
+- Registration or controlled account provisioning.
+- Login.
+- Logout.
+- Password reset.
+- JWT authentication.
+- Role-based dashboards.
+- User profiles.
+- Institution structure.
+- Admin user management.
+
+**Deliverable:** Working authentication and role-based application foundation.
+
+## Phase 2 – Student Learning Tracker MVP
+
+Build:
+
+- Student dashboard.
+- Timetable viewing.
+- Daily planner.
+- Personal task management.
+- Study session timer.
+- Goals and skills.
+- Progress analytics.
+- In-app notifications.
+
+**Deliverable:** Students can use the platform to manage their actual daily learning.
+
+## Phase 3 – Academic ERP Core
+
+Build:
+
+- Student management.
+- Faculty management.
+- Departments.
+- Programmes.
+- Subjects.
+- Sections.
+- Faculty allocation.
+- Timetable management.
+- Attendance.
+- Assignments.
+- Submissions.
+
+**Deliverable:** Faculty and administrators can manage the essential academic workflows.
+
+## Phase 4 – Assessments and Mentoring
+
+Build:
+
+- Quiz engine.
+- Question banks.
+- Assessments.
+- Marks management.
+- Result publication.
+- Mentor dashboard.
+- Student progress monitoring.
+- Follow-up workflows.
+
+**Deliverable:** Academic performance and mentoring workflows work end-to-end.
+
+## Phase 5 – AI Learning Assistant
+
+Build:
+
+- Text assistant.
+- Timetable-aware daily planning.
+- Assignment-aware recommendations.
+- Approved syllabus retrieval.
+- Practice question generation.
+- Voice input.
+- Voice output.
+- AI usage monitoring.
+
+**Deliverable:** A grounded AI assistant that can help students without changing official records independently.
+
+## Phase 6 – Advanced ERP
+
+Build:
+
+- Document management.
+- Document verification.
+- Signing integrations.
+- Events and opportunities.
+- Reports and exports.
+- Optional fee management.
+- Institutional integrations.
+- SSO if supported.
+
+**Deliverable:** Expanded institutional ERP.
+
+## Phase 7 – Production Deployment
+
+Complete:
+
+- Security review.
+- Performance testing.
+- Load testing.
+- Database backup.
+- Backup restoration testing.
+- Monitoring.
+- Logging.
+- CI/CD.
+- Production deployment.
+- User acceptance testing.
+- Operational documentation.
+
+**Deliverable:** A production deployment candidate ready for an approved Vignan pilot.
+
+---
+
+# 16. PRODUCTION DEPLOYMENT REQUIREMENTS
+
+Create separate environments:
+
+- Development.
+- Testing.
+- Staging.
+- Production.
+
+Use environment variables for:
+
+- Database credentials.
+- Django secret key.
+- JWT configuration.
+- AI provider keys.
+- Email credentials.
+- Storage credentials.
+- External service credentials.
+
+Never commit secrets to Git.
+
+Set up:
+
+- Dockerised frontend and backend.
+- PostgreSQL.
+- Redis.
+- Background workers.
+- Reverse proxy.
+- HTTPS.
+- Health-check endpoints.
+- Structured logs.
+- Error tracking.
+- Database backups.
+- Database restore procedure.
+- Deployment rollback procedure.
+
+Suggested initial service targets:
+
+| Area | Initial target |
+|---|---|
+| Availability | 99.5% monthly MVP target |
+| Common API operations | Typically under 2 seconds under expected load |
+| Accessibility | Target WCAG 2.2 AA |
+| Data backups | Automated and monitored |
+| Recovery | Documented and tested RPO/RTO |
+| Security | No unresolved critical vulnerabilities before release |
+
+Validate these targets through actual testing rather than assuming they have been achieved.
+
+Load-test expected peak traffic during semester starts, attendance periods, assignment deadlines, and examinations.
+
+---
+
+# 17. SAMPLE DATA AND DEMONSTRATION ENVIRONMENT
+
+Create a development-only seed-data system.
+
+Include:
+
+- One sample institution.
+- Multiple departments.
+- Academic programmes.
+- Academic years.
+- Semesters.
+- Sections.
+- Subjects.
+- Faculty accounts.
+- Student accounts.
+- Mentor accounts.
+- Sample timetables.
+- Assignments.
+- Attendance records.
+- Quizzes.
+- Learning goals.
+- Study sessions.
+
+Create separate test accounts for each role.
+
+Provide sample login credentials in the development README only.
+
+Never seed real student data or expose test accounts in production.
+
+---
+
+# 18. DOCUMENTATION REQUIREMENTS
+
+Create and maintain these files:
+
+**README.md**
+- Project overview.
+- Features.
+- Technology stack.
+- Installation.
+- Running frontend.
+- Running backend.
+- Running background workers.
+- Testing.
+
+**PRD.md**
+- Product requirements.
+- User roles.
+- Features.
+- User journeys.
+- Acceptance criteria.
+
+**ARCHITECTURE.md**
+- System architecture.
+- Component responsibilities.
+- Request flow.
+- AI integration.
+- Deployment architecture.
+
+**DATABASE.md**
+- Entity descriptions.
+- Relationships.
+- Constraints.
+- Indexes.
+- Migration strategy.
+
+**API.md**
+- API endpoints.
+- Authentication.
+- Request examples.
+- Response examples.
+- Error codes.
+
+**SECURITY.md**
+- Permission model.
+- Security controls.
+- Data protection.
+- Secret management.
+- Incident response.
+
+**DEPLOYMENT.md**
+- Docker setup.
+- Staging deployment.
+- Production deployment.
+- Backup and restore.
+- Rollback procedure.
+
+**TESTING.md**
+- Test commands.
+- Unit tests.
+- Integration tests.
+- End-to-end tests.
+- Test accounts.
+
+Also add useful code comments and module-level documentation for complex business logic.
+
+---
+
+# 19. DEVELOPMENT RULES
+
+Follow these rules throughout the project.
+
+1. Do not generate the entire application as one giant file.
+2. Do not use fake frontend data as a replacement for backend integration.
+3. Do not create buttons that do nothing.
+4. Do not hardcode student records or dashboard values.
+5. Do not bypass authentication during normal application usage.
+6. Do not trust frontend permissions alone.
+7. Do not expose secrets in source code.
+8. Do not allow AI to modify official academic records autonomously.
+9. Do not duplicate business logic across frontend and backend.
+10. Do not ignore failed tests or build errors.
+11. Do not silently change existing working features.
+12. Do not introduce unnecessary dependencies.
+13. Do not implement a feature without validation and error handling.
+14. Do not claim a feature is production-ready without testing it.
+15. Keep the application usable on mobile, tablet, and desktop.
+16. Maintain documentation whenever architecture or APIs change.
+17. Use Git commits with meaningful messages at logical milestones.
+18. Ask for approval before connecting to real Vignan systems or importing real student information.
+19. Record assumptions where official institutional requirements are not yet known.
+20. Prefer a working, secure MVP over a large unfinished collection of modules.
+
+---
+
+# 20. DEFINITION OF DONE
+
+A module is complete only when:
+
+- Frontend screens are implemented.
+- Backend endpoints are implemented.
+- Database models and migrations are complete.
+- Permissions are enforced.
+- Input validation works.
+- Loading and error states are implemented.
+- Unit tests pass.
+- Relevant integration tests pass.
+- API documentation is updated.
+- Responsive behaviour is checked.
+- No critical console or server errors remain.
+- The feature has been tested with the appropriate role.
+
+The application is ready for a Vignan pilot only when:
+
+- Student, faculty, mentor, and admin workflows work.
+- Academic records are permission-protected.
+- Attendance and marks changes are auditable.
+- The daily planner produces valid schedules.
+- AI responses are grounded in approved information.
+- Backup restoration has been tested.
+- Security testing has been completed.
+- Performance has been validated.
+- Pilot users have completed user acceptance testing.
+- Operational ownership and support procedures are defined.
+
+---
+
+# 21. FIRST TASK – START IMPLEMENTATION
+
+Before writing code:
+
+1. Inspect the entire existing repository.
+2. Identify the current frontend and backend technologies.
+3. Check whether any database or API implementation already exists.
+4. Identify incomplete features and existing reusable components.
+5. Check dependency versions and compatibility.
+6. Create a concise implementation assessment.
+7. Identify missing institutional decisions.
+8. Create a phased development checklist.
+
+Then start Phase 0 and Phase 1.
+
+Do not stop after creating the checklist. Implement the first working milestone.
+
+After each phase, provide:
+
+- What was implemented.
+- Files created or modified.
+- Database changes.
+- API endpoints completed.
+- Tests executed and their results.
+- Known issues.
+- Next development milestone.
+
+**Final instruction:** Build this as a real, maintainable institutional software product. Prioritise data correctness, student experience, security, reliable academic workflows, and production operations over visual appearance or feature count. The result must be a functional application that can be demonstrated to Vignan students, faculty, and administrators and progressively expanded into a complete college ERP.

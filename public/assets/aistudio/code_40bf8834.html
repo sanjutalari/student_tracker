@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>Aurora Glass AI</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;min-height:100vh;margin:0;padding:0;background-color:#171216;color:#ebdfe5;overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary": "#4b2700", "surface": "#171216", "inverse-primary": "#ab286d", "error-container": "#93000a", "glass-border": "rgba(255, 255, 255, 0.14)", "pink-soft": "#D9759F", "glass-fill": "rgba(255, 255, 255, 0.06)", "surface-dim": "#171216", "primary-container": "#ec5da1", "on-background": "#ebdfe5", "error": "#ffb4ab", "success": "#3DDC5A", "surface-variant": "#3a3337", "secondary": "#ffade3", "surface-container-high": "#2e282d", "surface-container-highest": "#3a3337", "on-secondary-fixed-variant": "#7e1a6a", "primary-fixed": "#ffd9e5", "on-primary": "#63003b", "secondary-fixed": "#ffd8ee", "glass-highlight": "rgba(255, 255, 255, 0.25)", "primary": "#ffb0ce", "surface-bright": "#3e373c", "on-tertiary-fixed": "#2d1600", "on-tertiary-fixed-variant": "#683c0e", "on-surface-variant": "#dcbfc8", "on-secondary": "#5f004f", "bg-deep": "#1A1015", "primary-fixed-dim": "#ffb0ce", "outline-variant": "#564148", "secondary-container": "#811d6d", "tertiary": "#f9b981", "background": "#171216", "on-primary-fixed-variant": "#8b0454", "on-primary-fixed": "#3e0022", "secondary-fixed-dim": "#ffade3", "surface-container-lowest": "#120d11", "mauve-300": "#C395B0", "glass-fill-tint": "rgba(255, 255, 255, 0.20)", "text-on-light": "#111111", "inverse-surface": "#ebdfe5", "surface-container": "#241e22", "tertiary-fixed": "#ffdcc0", "inverse-on-surface": "#352e33", "surface-container-low": "#201a1e", "tertiary-container": "#bd8551", "tertiary-fixed-dim": "#f9b981", "on-error-container": "#ffdad6", "on-secondary-container": "#ff95df", "outline": "#a48a92", "on-surface": "#ebdfe5", "plum-700": "#5A1830", "on-tertiary-container": "#422200", "on-primary-container": "#570033", "glass-fill-strong": "rgba(255, 255, 255, 0.12)", "on-error": "#690005", "surface-tint": "#ffb0ce", "plum-500": "#7E2548", "mauve-400": "#B07A9C", "on-secondary-fixed": "#3a0030" }, borderRadius: { DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px" }, spacing: { gutter: "1rem", "space-sm": "0.5rem", "margin-mobile": "1.25rem", "space-md": "1rem", "gutter-mobile": "0.75rem", "space-xl": "2rem", margin: "1.5rem", "space-lg": "1.25rem", "space-xs": "0.25rem" }, fontFamily: { "title-sm": ["Plus Jakarta Sans"], meta: ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], caption: ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"] }, fontSize: { "title-sm": ["16px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "500" }], meta: ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "400" }], "display-hero-mobile": ["38px", { lineHeight: "42px", letterSpacing: "-0.02em", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", letterSpacing: "0em", fontWeight: "400" }], "headline-lg": ["30px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "500" }], caption: ["13px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "400" }], "headline-lg-mobile": ["26px", { lineHeight: "30px", letterSpacing: "-0.02em", fontWeight: "500" }], "label-md": ["14px", { lineHeight: "18px", letterSpacing: "0em", fontWeight: "500" }], "headline-md": ["22px", { lineHeight: "26px", letterSpacing: "-0.01em", fontWeight: "500" }], "display-hero": ["44px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "500" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+
+    /* Living Aurora Drift Animation */
+    @keyframes auroraDriftOne {
+      0%, 100% {
+        transform: translate(-50%, 0) scale(1);
+        opacity: 0.35;
+      }
+      50% {
+        transform: translate(-45%, 25px) scale(1.18);
+        opacity: 0.55;
+      }
+    }
+    @keyframes auroraDriftTwo {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.22;
+      }
+      50% {
+        transform: translate(-30px, -20px) scale(1.22);
+        opacity: 0.42;
+      }
+    }
+    @keyframes auroraDriftAmbient {
+      0%, 100% {
+        transform: scale(1) translate(0, 0);
+        opacity: 0.3;
+      }
+      50% {
+        transform: scale(1.15) translate(15px, 10px);
+        opacity: 0.48;
+      }
+    }
+    .animate-aurora-1 {
+      animation: auroraDriftOne 14s ease-in-out infinite;
+    }
+    .animate-aurora-2 {
+      animation: auroraDriftTwo 16s ease-in-out infinite;
+    }
+    .animate-aurora-ambient {
+      animation: auroraDriftAmbient 18s ease-in-out infinite;
+    }
+
+    /* Breathing Glow for Circular Progress Ring */
+    @keyframes ringPulse {
+      0%, 100% {
+        filter: drop-shadow(0 0 7px rgba(217, 117, 159, 0.75));
+      }
+      50% {
+        filter: drop-shadow(0 0 16px rgba(232, 90, 158, 0.95)) drop-shadow(0 0 25px rgba(255, 176, 206, 0.5));
+      }
+    }
+    .animate-ring-pulse {
+      animation: ringPulse 3.5s ease-in-out infinite;
+    }
+
+    /* Mascot subtle float & warmth */
+    @keyframes robotPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 0 0 rgba(249, 185, 129, 0);
+      }
+      50% {
+        transform: scale(1.04);
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.1), 0 0 16px rgba(249, 185, 129, 0.45);
+      }
+    }
+    .animate-robot-pulse {
+      animation: robotPulse 4s ease-in-out infinite;
+    }
+
+    /* Shimmer Bar Sweep */
+    @keyframes shimmerMove {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(200%);
+      }
+    }
+    .animate-shimmer-loop {
+      animation: shimmerMove 2.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    /* Button Shimmer Sheen */
+    @keyframes ctaSheen {
+      0%, 20% {
+        transform: translateX(-150%) skewX(-20deg);
+      }
+      80%, 100% {
+        transform: translateX(250%) skewX(-20deg);
+      }
+    }
+    .btn-sheen-sweep {
+      animation: ctaSheen 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    /* Staggered entrance animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .stagger-1 { animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both 0.05s; }
+    .stagger-2 { animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both 0.15s; }
+    .stagger-3 { animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both 0.25s; }
+    .stagger-4 { animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both 0.35s; }
+    .stagger-5 { animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both 0.45s; }
+    .stagger-6 { animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both 0.55s; }
+
+    /* Accessibility: Respect Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .stagger-1, .stagger-2, .stagger-3, .stagger-4, .stagger-5, .stagger-6 {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .animate-aurora-1, .animate-aurora-2, .animate-aurora-ambient,
+      .animate-ring-pulse, .animate-robot-pulse, .animate-shimmer-loop, .btn-sheen-sweep {
+        animation: none !important;
+      }
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface font-body-md text-body-md relative overflow-x-hidden min-h-screen selection:bg-pink-soft selection:text-white"><div class="pointer-events-none fixed -top-24 left-1/2 -translate-x-1/2 w-[380px] h-[340px] bg-plum-500/30 rounded-full blur-[110px] z-0 animate-aurora-1"></div><div class="pointer-events-none fixed top-1/3 -right-28 w-[300px] h-[300px] bg-primary-container/20 rounded-full blur-[100px] z-0 animate-aurora-2"></div><header class="fixed top-0 inset-x-0 z-50 bg-surface/75 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe transition-all"><div class="h-11 px-6 flex items-center justify-between text-on-surface font-title-sm text-caption select-none"><span class="font-semibold tracking-tight">9:41</span><div class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] leading-none">signal_cellular_alt</span><span class="material-symbols-outlined text-[16px] leading-none">wifi</span><span class="material-symbols-outlined text-[18px] leading-none">battery_full</span></div></div><div class="h-16 px-margin-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-11 h-11 rounded-full bg-glass-fill-strong backdrop-blur-md flex items-center justify-center text-on-surface shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] hover:scale-105 active:scale-95 transition-transform"><span class="material-symbols-outlined text-[20px] text-primary">auto_awesome</span></div><div class="flex flex-col"><span class="font-caption text-caption text-on-surface-variant leading-none">Sanctuary</span><h1 class="font-headline-md text-headline-md text-on-surface tracking-tight leading-tight">Course Progress</h1></div></div><div class="flex items-center gap-space-xs"><button class="w-11 h-11 rounded-full bg-glass-fill-strong backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-glass-fill-tint active:scale-90 transition-all shadow-[inset_0_1px_0_rgba(255,255,255,0.25)]"><span class="material-symbols-outlined text-[20px]">notifications</span></button><button class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1 hover:brightness-110 active:scale-90 transition-transform"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></button></div></div></header><main class="flex flex-col relative z-10 w-full min-h-screen px-margin-mobile pt-28 pb-32 bg-surface"><div class="flex flex-col w-full gap-space-lg select-none">
+<!-- Interactive Toast Feedback -->
+<div class="fixed top-24 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full bg-surface-container-highest text-on-surface font-caption text-caption shadow-xl opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 backdrop-blur-xl" id="planner-toast">
+    Notification text
+  </div>
+<!-- Top Date Selector & Academic Summary Ribbon -->
+<div class="flex flex-col gap-space-sm stagger-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<button class="w-9 h-9 rounded-full bg-glass-fill backdrop-blur-md flex items-center justify-center text-on-surface-variant hover:text-on-surface active:scale-95 transition-all" id="prev-day-btn">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-success"></span>
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight" id="active-date-display">Today, Wed Oct 24</span>
+</div>
+<span class="font-meta text-meta text-mauve-300">Fall Semester • Week 8</span>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-glass-fill backdrop-blur-md flex items-center justify-center text-primary hover:text-on-surface active:scale-95 transition-all" id="calendar-view-btn">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+</button>
+</div>
+<!-- Overview Pill -->
+<div class="w-full p-space-sm rounded-lg bg-glass-fill backdrop-blur-md flex items-center gap-space-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.18)]">
+<div class="w-8 h-8 rounded-full bg-plum-700/60 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-caption text-caption text-on-surface font-medium truncate">College: 9:00 AM - 4:00 PM</span>
+<span class="w-1 h-1 rounded-full bg-mauve-300/40 shrink-0"></span>
+<span class="font-caption text-caption text-tertiary-fixed font-medium truncate">Study &amp; Skill: 3h 15m planned</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Skill Tracker Hero Card -->
+<div class="w-full rounded-[28px] bg-gradient-to-br from-plum-700/80 via-surface-container-high/90 to-surface-container-lowest p-space-lg backdrop-blur-2xl relative overflow-hidden stagger-2 shadow-xl">
+<div class="absolute -top-12 -right-12 w-40 h-40 bg-primary-container/30 rounded-full blur-2xl pointer-events-none"></div>
+<div class="absolute bottom-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-md">
+<!-- Header row of Card -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="px-2.5 py-1 rounded-full bg-glass-fill-strong backdrop-blur-md font-meta text-meta text-primary font-medium tracking-wide uppercase flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+            Current Focus
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/60 font-meta text-meta text-secondary font-medium">Lvl 3</span>
+</div>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[18px]">local_fire_department</span>
+<span class="font-meta text-meta font-bold">14d streak</span>
+</div>
+</div>
+<!-- Skill Title & Milestone -->
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">Full-Stack Development</h2>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-pink-soft">verified</span>
+<span class="font-body-md text-body-md text-mauve-300">Level 3: Component Lifecycle &amp; Signals (Angular 18)</span>
+</div>
+</div>
+<!-- Progress Meter & Time Stats -->
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex items-center justify-between text-caption font-caption">
+<span class="text-on-surface-variant">Time spent today</span>
+<div class="flex items-baseline gap-1">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold" id="time-spent-label">1h 15m</span>
+<span class="text-mauve-300">/ 2h target</span>
+</div>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-lowest/80 overflow-hidden p-0.5 shadow-inner">
+<div class="h-full rounded-full bg-gradient-to-r from-pink-soft via-primary to-secondary transition-all duration-1000 ease-out relative" id="skill-progress-bar" style="width: 62.5%">
+<div class="absolute inset-0 bg-white/20 animate-shimmer-loop rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Call to Action Session Button -->
+<div class="pt-2 flex items-center gap-space-sm">
+<button class="flex-1 h-[52px] rounded-full bg-on-surface text-text-on-light font-title-sm text-title-sm font-semibold flex items-center justify-center gap-2 hover:brightness-105 active:scale-95 transition-all shadow-lg shadow-plum-700/40 relative overflow-hidden group" id="start-session-btn">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span id="start-session-text">Start Skill Session</span>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent btn-sheen-sweep pointer-events-none"></div>
+</button>
+<button class="w-[52px] h-[52px] rounded-full bg-glass-fill backdrop-blur-md flex items-center justify-center text-on-surface hover:bg-glass-fill-tint active:scale-95 transition-all" id="skill-options-btn">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Schedule Timeline Header -->
+<div class="flex items-center justify-between stagger-3 pt-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md text-on-surface tracking-tight">Today's Flow</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-mauve-300 font-meta text-meta font-medium">5 blocks</span>
+</div>
+<button class="font-caption text-caption text-primary hover:text-secondary flex items-center gap-0.5 transition-colors" id="filter-all-btn">
+<span>Timeline view</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<!-- Timeline Cards Stream -->
+<div class="flex flex-col gap-space-md stagger-4 relative">
+<!-- Connecting Ambient Glow Track -->
+<div class="absolute left-6 top-8 bottom-8 w-[2px] bg-gradient-to-b from-plum-500/40 via-pink-soft/30 to-plum-700/20 pointer-events-none"></div>
+<!-- Block 1: Academic Hours (Locked College Schedule) -->
+<div class="relative flex items-start gap-space-md w-full">
+<div class="w-12 pt-3 flex flex-col items-center shrink-0 z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant shadow-md">
+<span class="material-symbols-outlined text-[16px]">domain</span>
+</div>
+<span class="font-meta text-meta text-on-surface-variant mt-1.5 font-medium">09:00</span>
+</div>
+<div class="flex-1 rounded-[24px] bg-glass-fill backdrop-blur-xl p-space-md flex flex-col gap-space-xs transition-all hover:bg-glass-fill-strong">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-mauve-300">09:00 AM – 01:00 PM</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/80 text-on-surface-variant font-meta text-meta flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">lock</span>
+            Fixed Roster
+          </span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-medium leading-snug">Official College Academics</h3>
+<p class="font-caption text-caption text-on-surface-variant">Design &amp; Analysis of Algorithms (DAA) • Operating Systems • Web Dev Studio</p>
+<div class="flex items-center gap-2 pt-2 flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-meta text-meta">Lecture Hall 4B</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-mauve-300 font-meta text-meta">Prof. Chen</span>
+<span class="px-2 py-0.5 rounded-full bg-success/20 text-success font-meta text-meta font-medium">Completed</span>
+</div>
+</div>
+</div>
+<!-- Block 2: Post-College Class Revision (OS) -->
+<div class="relative flex items-start gap-space-md w-full">
+<div class="w-12 pt-3 flex flex-col items-center shrink-0 z-10">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-secondary shadow-md">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+</div>
+<span class="font-meta text-meta text-mauve-300 mt-1.5 font-medium">16:30</span>
+</div>
+<div class="flex-1 rounded-[24px] bg-glass-fill backdrop-blur-xl p-space-md flex flex-col gap-space-xs transition-all hover:bg-glass-fill-strong">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-secondary">04:30 PM – 05:30 PM (60m)</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/40 text-tertiary-fixed font-meta text-meta font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">alarm</span>
+            Due Tomorrow
+          </span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-medium leading-snug">Post-College Revision: Operating Systems</h3>
+<p class="font-caption text-caption text-on-surface-variant">Deadlock Prevention, Banker's Algorithm &amp; Process Synchronization.</p>
+<!-- Attached Assignment Anchor Pill -->
+<div class="mt-1 p-2 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-tertiary shrink-0">assignment</span>
+<span class="font-meta text-meta text-on-surface truncate">Linked: OS Practice Quiz #3 &amp; Sync Notes</span>
+</div>
+<button class="assignment-check-btn w-6 h-6 rounded-full bg-glass-fill flex items-center justify-center text-on-surface-variant hover:text-success hover:bg-success/20 transition-all shrink-0">
+<span class="material-symbols-outlined text-[14px]">done</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Block 3: Rest & Refreshment Break Pill -->
+<div class="relative flex items-center gap-space-md w-full py-1">
+<div class="w-12 flex flex-col items-center shrink-0 z-10">
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center text-mauve-300">
+<span class="material-symbols-outlined text-[13px]">coffee</span>
+</div>
+</div>
+<div class="flex-1 py-2 px-3 rounded-full bg-glass-fill backdrop-blur-md flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-meta text-meta text-mauve-300 font-medium">05:30 PM – 05:45 PM</span>
+<span class="w-1 h-1 rounded-full bg-mauve-300/40"></span>
+<span class="font-caption text-caption text-on-surface">Rest &amp; Green Tea Break</span>
+</div>
+<span class="font-meta text-meta text-on-surface-variant">15 min</span>
+</div>
+</div>
+<!-- Block 4: Skill Learning Block (Active/Live Card) -->
+<div class="relative flex items-start gap-space-md w-full">
+<div class="w-12 pt-3 flex flex-col items-center shrink-0 z-10">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-lg shadow-pink-soft/30 animate-pulse">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">code</span>
+</div>
+<span class="font-meta text-meta text-primary mt-1.5 font-bold">17:45</span>
+</div>
+<div class="flex-1 rounded-[24px] bg-surface-container-high/90 p-space-md flex flex-col gap-space-xs backdrop-blur-2xl shadow-lg relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-28 h-28 bg-primary/20 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-caption text-caption text-primary font-semibold">Active Upcoming • 05:45 PM – 07:00 PM</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary/20 text-primary font-meta text-meta font-medium">75 mins</span>
+</div>
+<div class="flex items-center justify-between pt-0.5">
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Full-Stack Angular &amp; Node.js</h3>
+<span class="font-caption text-caption text-secondary font-medium">Track: Frontend Eng</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Signals state migration, RxJS subject caching &amp; JWT bearer pipeline.</p>
+<!-- Progress Mini Bar inside block -->
+<div class="flex items-center gap-2 pt-1.5">
+<div class="flex-1 h-1.5 rounded-full bg-surface-container-lowest overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 64%"></div>
+</div>
+<span class="font-meta text-meta text-mauve-300 font-semibold">64% syllabus</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-tertiary">timer</span>
+<span class="font-meta text-meta" id="timer-status-text">Timer ready to launch</span>
+</div>
+<button class="px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-caption text-caption font-semibold hover:brightness-110 active:scale-95 transition-all shadow-sm" id="quick-start-skill-btn">
+            Launch IDE
+          </button>
+</div>
+</div>
+</div>
+<!-- Block 5: Homework & Lab Assignment -->
+<div class="relative flex items-start gap-space-md w-full">
+<div class="w-12 pt-3 flex flex-col items-center shrink-0 z-10">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant shadow-md">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+</div>
+<span class="font-meta text-meta text-on-surface-variant mt-1.5 font-medium">19:30</span>
+</div>
+<div class="flex-1 rounded-[24px] bg-glass-fill backdrop-blur-xl p-space-md flex flex-col gap-space-xs transition-all hover:bg-glass-fill-strong">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-mauve-300">07:30 PM – 08:15 PM (45m)</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container/40 text-error font-meta text-meta font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">priority_high</span>
+            Pending Flag
+          </span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-medium leading-snug">DAA Lab Assignment 4</h3>
+<p class="font-caption text-caption text-on-surface-variant">Implement Dynamic Programming memoization for 0/1 Knapsack &amp; submit via portal.</p>
+<div class="flex items-center justify-between pt-1 text-mauve-300">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">cloud_upload</span>
+<span class="font-meta text-meta">GitHub repo link required</span>
+</div>
+<span class="font-meta text-meta text-on-surface-variant">Estimated: 35 min</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Plan Management Actions -->
+<div class="flex flex-col gap-space-sm stagger-5 pt-2">
+<span class="font-meta text-meta text-mauve-300 uppercase tracking-wider font-semibold px-1">Timetable Management</span>
+<div class="grid grid-cols-2 gap-space-sm">
+<button class="h-12 rounded-full bg-glass-fill backdrop-blur-md px-4 flex items-center justify-center gap-2 text-on-surface font-label-md text-label-md hover:bg-glass-fill-tint active:scale-95 transition-all" id="adjust-plan-btn">
+<span class="material-symbols-outlined text-[18px] text-primary">edit_calendar</span>
+<span class="truncate">Adjust Study Plan</span>
+</button>
+<button class="h-12 rounded-full bg-glass-fill backdrop-blur-md px-4 flex items-center justify-center gap-2 text-on-surface font-label-md text-label-md hover:bg-glass-fill-tint active:scale-95 transition-all" id="sync-schedule-btn">
+<span class="material-symbols-outlined text-[18px] text-secondary">sync</span>
+<span class="truncate">Sync Academic Timetable</span>
+</button>
+</div>
+</div>
+<!-- AI Study Suggestion Pill Micro-card -->
+<div class="w-full rounded-2xl bg-surface-container-low/70 backdrop-blur-xl p-space-md flex items-center gap-space-sm stagger-6">
+<div class="w-10 h-10 rounded-full bg-glass-fill-strong flex items-center justify-center text-primary shrink-0 animate-robot-pulse">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-meta text-meta text-primary font-semibold">AI Planner Suggestion</span>
+<p class="font-caption text-caption text-on-surface-variant truncate">You retain OS concepts 22% better after tea breaks. Ready for Angular at 5:45!</p>
+</div>
+<button class="w-7 h-7 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface shrink-0" id="dismiss-tip-btn">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  (function() {
+    const toast = document.getElementById('planner-toast');
+    const startSessionBtn = document.getElementById('start-session-btn');
+    const startSessionText = document.getElementById('start-session-text');
+    const adjustPlanBtn = document.getElementById('adjust-plan-btn');
+    const syncScheduleBtn = document.getElementById('sync-schedule-btn');
+    const quickStartSkillBtn = document.getElementById('quick-start-skill-btn');
+    const timerStatusText = document.getElementById('timer-status-text');
+    const timeSpentLabel = document.getElementById('time-spent-label');
+    const progressBar = document.getElementById('skill-progress-bar');
+    const dismissTipBtn = document.getElementById('dismiss-tip-btn');
+    const prevDayBtn = document.getElementById('prev-day-btn');
+    const calendarViewBtn = document.getElementById('calendar-view-btn');
+    const assignmentBtns = document.querySelectorAll('.assignment-check-btn');
+
+    let isSessionRunning = false;
+    let sessionInterval = null;
+    let secondsElapsed = 75 * 60; // 1h 15m in seconds
+
+    function showToast(message) {
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.remove('opacity-0', '-translate-y-2', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      clearTimeout(window.__plannerToastTimeout);
+      window.__plannerToastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', '-translate-y-2', 'pointer-events-none');
+      }, 2400);
+    }
+
+    function formatTime(totalSec) {
+      const hrs = Math.floor(totalSec / 3600);
+      const mins = Math.floor((totalSec % 3600) / 60);
+      return `${hrs}h ${mins}m`;
+    }
+
+    if (startSessionBtn) {
+      startSessionBtn.addEventListener('click', () => {
+        isSessionRunning = !isSessionRunning;
+        if (isSessionRunning) {
+          startSessionText.textContent = 'Pause Session';
+          startSessionBtn.classList.add('bg-primary', 'text-on-primary');
+          startSessionBtn.classList.remove('bg-on-surface', 'text-text-on-light');
+          showToast('Focus session active: Angular & Signals');
+          if (timerStatusText) timerStatusText.textContent = 'Session tracking live...';
+
+          sessionInterval = setInterval(() => {
+            secondsElapsed += 15;
+            if (timeSpentLabel) timeSpentLabel.textContent = formatTime(secondsElapsed);
+            const target = 120 * 60;
+            const pct = Math.min(100, (secondsElapsed / target) * 100);
+            if (progressBar) progressBar.style.width = pct + '%';
+          }, 1000);
+        } else {
+          startSessionText.textContent = 'Resume Session';
+          startSessionBtn.classList.remove('bg-primary', 'text-on-primary');
+          startSessionBtn.classList.add('bg-on-surface', 'text-text-on-light');
+          clearInterval(sessionInterval);
+          showToast('Session paused and logged to Sanctuary');
+          if (timerStatusText) timerStatusText.textContent = 'Paused • Ready to resume';
+        }
+      });
+    }
+
+    if (quickStartSkillBtn) {
+      quickStartSkillBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showToast('Booting Cloud IDE container for Angular 18...');
+      });
+    }
+
+    if (adjustPlanBtn) {
+      adjustPlanBtn.addEventListener('click', () => {
+        showToast('Opening Drag & Reorder Plan mode...');
+      });
+    }
+
+    if (syncScheduleBtn) {
+      syncScheduleBtn.addEventListener('click', () => {
+        showToast('Synced with College Campus ERP timetable');
+      });
+    }
+
+    if (prevDayBtn) {
+      prevDayBtn.addEventListener('click', () => {
+        showToast('Viewing previous day logs');
+      });
+    }
+
+    if (calendarViewBtn) {
+      calendarViewBtn.addEventListener('click', () => {
+        showToast('Opening Month & Exam Schedule');
+      });
+    }
+
+    if (dismissTipBtn) {
+      dismissTipBtn.addEventListener('click', (e) => {
+        const card = dismissTipBtn.closest('.rounded-2xl');
+        if (card) {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.95)';
+          card.style.transition = 'all 0.3s ease';
+          setTimeout(() => card.remove(), 300);
+        }
+      });
+    }
+
+    assignmentBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        btn.classList.toggle('text-success');
+        btn.classList.toggle('bg-success/20');
+        showToast('Assignment mark updated');
+      });
+    });
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/80 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.2)]" data-active-classes="text-primary font-title-sm"><div class="flex items-center justify-around h-16 px-gutter-mobile"><a class="nav-tab flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-all duration-200 active:scale-90" data-path="learning-dashboard" href="#"><span class="material-symbols-outlined text-[22px] transition-transform duration-200">dashboard</span><span class="font-meta text-meta mt-0.5">Learn</span></a><a class="nav-tab flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-all duration-200 active:scale-90" data-path="course-progress" href="#"><span class="material-symbols-outlined text-[22px] transition-transform duration-200" style="font-variation-settings: 'FILL' 1;">stacked_line_chart</span><span class="font-meta text-meta mt-0.5">Progress</span></a><a class="nav-tab flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-all duration-200 active:scale-90" data-path="ai-assistant-chat" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px] transition-transform duration-200">forum</span><span class="absolute -top-0.5 -right-1 w-2 h-2 rounded-full bg-primary ring-2 ring-surface animate-pulse"></span></div><span class="font-meta text-meta mt-0.5">AI Mentor</span></a><a class="nav-tab flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-all duration-200 active:scale-90" data-path="profile-sanctuary" href="#"><span class="material-symbols-outlined text-[22px] transition-transform duration-200">account_circle</span><span class="font-meta text-meta mt-0.5">Profile</span></a></div><div class="flex justify-center pb-2 pt-1"><div class="w-32 h-1 rounded-full bg-white/25"></div></div></nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Metric Counter & SVG Ring Sweep Animation
+    const counterEl = document.getElementById('hero-progress-counter');
+    const ringEl = document.getElementById('progress-circle-ring');
+    const milestoneBar = document.getElementById('milestone-progress-bar');
+    const toast = document.getElementById('action-toast');
+    const bookmarkBtn = document.getElementById('bookmark-btn');
+    const bookmarkIcon = document.getElementById('bookmark-icon');
+    const ctaBtn = document.getElementById('cta-continue-btn');
+    const askMentorBtn = document.getElementById('ask-mentor-btn');
+
+    // Total circumference for r=62 is 2 * PI * 62 ≈ 389.55
+    const circumference = 389.5;
+    const targetPercent = 79;
+    const targetOffset = circumference - (circumference * targetPercent) / 100; // ~81.8
+
+    // Trigger ring and milestone bar stroke
+    setTimeout(() => {
+      if (ringEl) {
+        ringEl.style.strokeDashoffset = targetOffset;
+      }
+      if (milestoneBar) {
+        milestoneBar.style.width = '79%';
+      }
+    }, 120);
+
+    // Smooth count-up counter (0 to 79)
+    if (counterEl) {
+      let current = 0;
+      const duration = 1400; // 1.4s
+      const frameRate = 1000 / 60;
+      const totalFrames = Math.round(duration / frameRate);
+      let frame = 0;
+
+      const easeOutQuad = (t) => t * (2 - t);
+
+      const counterInterval = setInterval(() => {
+        frame++;
+        const progress = easeOutQuad(frame / totalFrames);
+        current = Math.min(Math.round(progress * targetPercent), targetPercent);
+        counterEl.textContent = `${current}%`;
+
+        if (frame >= totalFrames) {
+          clearInterval(counterInterval);
+          counterEl.textContent = `${targetPercent}%`;
+        }
+      }, frameRate);
+    }
+
+    // Toast helper
+    function showToast(msg) {
+      if (!toast) return;
+      toast.textContent = msg;
+      toast.classList.remove('opacity-0', 'translate-y-[-8px]', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+      clearTimeout(window.__toastTimeout);
+      window.__toastTimeout = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-[-8px]', 'pointer-events-none');
+      }, 2200);
+    }
+
+    // Bookmark Toggle State
+    let isBookmarked = false;
+    if (bookmarkBtn && bookmarkIcon) {
+      bookmarkBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        isBookmarked = !isBookmarked;
+        if (isBookmarked) {
+          bookmarkIcon.style.fontVariationSettings = "'FILL' 1";
+          bookmarkBtn.classList.add('text-primary');
+          bookmarkBtn.classList.remove('text-on-surface-variant');
+          showToast('Added to saved sanctuary courses');
+        } else {
+          bookmarkIcon.style.fontVariationSettings = "'FILL' 0";
+          bookmarkBtn.classList.remove('text-primary');
+          bookmarkBtn.classList.add('text-on-surface-variant');
+          showToast('Removed from saved courses');
+        }
+      });
+    }
+
+    // Ask Mentor Micro-interaction
+    if (askMentorBtn) {
+      askMentorBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showToast('Connecting with Neural AI Mentor...');
+      });
+    }
+
+    // Continue CTA interaction
+    if (ctaBtn) {
+      ctaBtn.addEventListener('click', () => {
+        showToast('Resuming Neural Interfaces module...');
+      });
+    }
+
+    // Interactive Tab switching feel
+    const navTabs = document.querySelectorAll('.nav-tab');
+    navTabs.forEach((tab) => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        navTabs.forEach((t) => {
+          t.classList.remove('text-primary', 'font-title-sm');
+          t.classList.add('text-on-surface-variant');
+          const icon = t.querySelector('.material-symbols-outlined');
+          if (icon && icon.textContent !== 'smart_toy') {
+            icon.style.fontVariationSettings = "'FILL' 0";
+          }
+        });
+        tab.classList.remove('text-on-surface-variant');
+        tab.classList.add('text-primary', 'font-title-sm');
+        const activeIcon = tab.querySelector('.material-symbols-outlined');
+        if (activeIcon) {
+          activeIcon.style.fontVariationSettings = "'FILL' 1";
+        }
+      });
+    });
+  });
+</script>
+</body></html>
